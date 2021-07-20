@@ -16,7 +16,7 @@ namespace CustomerApi.Domain.AggregatesModel.CustomerAggregate.Rules
             _email = email;
         }
 
-        public bool IsBroken() => !_customerUniquenessChecker.IsUnique(_email);
+        public bool IsBroken() => !_customerUniquenessChecker.IsUnique(_email).Result;
 
         public string Message => "Customer with this email already exists.";
     }

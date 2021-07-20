@@ -5,6 +5,6 @@ namespace CustomerApi.Domain.AggregatesModel.CustomerAggregate.Rules
 {
     public interface ICustomerUniquenessChecker
     {
-        bool IsUnique(string customerEmail);
+        Task<bool> IsUnique(string customerEmail);
     }
 }
