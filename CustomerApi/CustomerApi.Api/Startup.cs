@@ -23,7 +23,7 @@ namespace CustomerApi.Api
             services.AddOptions();
             services.AddServiceLayer();
             services.AddEventBusExtension(Configuration);
-            services.AddPersistenceInfrastructure(Configuration);            
+            services.AddPersistenceInfrastructure(Configuration);
             services.AddControllers();
             services.AddSwaggerExtension();
             services.AddApiVersioningExtension();

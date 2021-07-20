@@ -20,7 +20,7 @@ namespace CustomerApi.Data.Repository.v1
 
         public async Task<bool> IsEmailUniqueAsync(string email)
         {
-            return await CustomerContext.Customer.CountAsync(e => e.Email.ToLower() == email.ToLower()) > 0;
+            return await CustomerContext.Customer.CountAsync(e => e.Email.ToLower() == email.ToLower()) <= 0;
         }
     }
 }

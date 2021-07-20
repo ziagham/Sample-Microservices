@@ -28,7 +28,7 @@ namespace CustomerApi.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public async Task<ActionResult<List<Customer>>> Customers()
+        public async Task<ActionResult<List<Customer>>> Get()
         {
             try
             {
@@ -52,7 +52,7 @@ namespace CustomerApi.Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         [HttpPost]
-        public async Task<ActionResult<Customer>> Customer(CreateCustomerCommand createCustomerCommand)
+        public async Task<ActionResult<Customer>> Post(CreateCustomerCommand createCustomerCommand)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace CustomerApi.Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         [HttpPut]
-        public async Task<ActionResult<Customer>> Customer(UpdateCustomerCommand updateCustomerCommand)
+        public async Task<ActionResult<Customer>> Put(UpdateCustomerCommand updateCustomerCommand)
         {
             try
             {
