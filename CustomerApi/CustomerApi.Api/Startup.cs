@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FluentValidation.AspNetCore;
+using CustomerApi.Service.v1.Exceptions;
 
 namespace CustomerApi.Api
 {
@@ -21,11 +23,15 @@ namespace CustomerApi.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
-            services.AddServiceLayer();
             services.AddEventBusExtension(Configuration);
             services.AddPersistenceInfrastructure(Configuration);
+            services.AddServiceLayer();
             services.AddSwaggerExtension();
             services.AddControllers();
+            services.AddFluentValidation(cfg =>
+            {
+                cfg.RegisterValidatorsFromAssemblyContaining<ValidationException>(); 
+            });
             services.AddApiVersioningExtension();
             services.AddHealthChecks();
         }

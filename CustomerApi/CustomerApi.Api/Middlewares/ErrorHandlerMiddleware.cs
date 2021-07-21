@@ -1,3 +1,4 @@
+using CustomerApi.Service.v1;
 using CustomerApi.Service.v1.Exceptions;
 using CustomerApi.Service.v1.Wrappers;
 using Microsoft.AspNetCore.Http;
@@ -25,36 +26,51 @@ namespace CustomerApi.Api.Middlewares
             {
                 await _next(context);
             }
-            catch (Exception error)
+            catch (Exception ex)
             {
-                var response = context.Response;
-                response.ContentType = "application/json";
-                var responseModel = new Response<string>() { Succeeded = false, Message = error?.Message };
-                
-                switch (error)
-                {
-                    case ApiException e:
-                        // custom application error
-                        response.StatusCode = (int)HttpStatusCode.BadRequest;
-                        break;
-                    case ValidationException e:
-                        // custom application error
-                        response.StatusCode = (int)HttpStatusCode.BadRequest;
-                        responseModel.Errors = e.Errors;
-                        break;
-                    case KeyNotFoundException e:
-                        // not found error
-                        response.StatusCode = (int)HttpStatusCode.NotFound;
-                        break;
-                    default:
-                        // unhandled error
-                        response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                        break;
-                }
-                var result = JsonSerializer.Serialize(responseModel);
-
-                await response.WriteAsync(result);
+                await HandleExceptionAsync(context, ex);
             }
+        }
+
+        private Task HandleExceptionAsync(HttpContext context, Exception exception)
+        {
+            var code = HttpStatusCode.InternalServerError;
+            var response = context.Response;
+            var responseModel = new Response<string>() { Succeeded = false, Message = exception?.Message };
+            
+            switch (exception)
+            {
+                case ApiException e:
+                    // custom application error
+                    code = HttpStatusCode.BadRequest;
+                    break;
+                case ValidationException e:
+                    // custom application error
+                    code = HttpStatusCode.BadRequest;
+                    responseModel.Errors = e.Errors;
+                    break;
+                case BadRequestException badRequestException:
+                    code = HttpStatusCode.BadRequest;
+                    break;
+                case NotFoundException _:
+                    code = HttpStatusCode.NotFound;
+                    break;
+                case KeyNotFoundException e:
+                    // not found error
+                    code = HttpStatusCode.NotFound;
+                    break;
+                default:
+                    // unhandled error
+                    code = HttpStatusCode.InternalServerError;
+                    break;
+            }
+
+            response.ContentType = "application/json";
+            response.StatusCode = (int)code;
+
+            var result = JsonSerializer.Serialize(responseModel);
+
+            return context.Response.WriteAsync(result);
         }
     }
 }

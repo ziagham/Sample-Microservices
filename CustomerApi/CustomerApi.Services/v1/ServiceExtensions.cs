@@ -3,7 +3,6 @@ using CustomerApi.Data.Repository.v1;
 using CustomerApi.Data.Rules.v1;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate.Rules;
 using MediatR;
-using FluentValidation;
 using System.Reflection;
 using CustomerApi.Service.v1.Behaviors;
 
@@ -18,11 +17,12 @@ namespace CustomerApi.Service.v1
             services.AddTransient<ICustomerRepository, CustomerRepository>();
 
             // Inject Rules
-            services.AddScoped<ICustomerUniquenessChecker, CustomerUniquenessChecker>();
+            services.AddTransient<ICustomerUniquenessChecker, CustomerUniquenessChecker>();
 
             // Inject 3rd parties
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            
+            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
             
             return services;
