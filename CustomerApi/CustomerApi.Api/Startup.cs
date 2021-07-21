@@ -24,8 +24,8 @@ namespace CustomerApi.Api
             services.AddServiceLayer();
             services.AddEventBusExtension(Configuration);
             services.AddPersistenceInfrastructure(Configuration);
-            services.AddControllers();
             services.AddSwaggerExtension();
+            services.AddControllers();
             services.AddApiVersioningExtension();
             services.AddHealthChecks();
         }

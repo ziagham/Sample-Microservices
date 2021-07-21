@@ -67,7 +67,7 @@ namespace CustomerApi.Api.Extensions
             }
             else
             {
-                services.AddDbContext<CustomerContext>(options => options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
+                services.AddDbContext<CustomerContext>(options => options.UseInMemoryDatabase("ApplicationDb"));
             }
         }
 

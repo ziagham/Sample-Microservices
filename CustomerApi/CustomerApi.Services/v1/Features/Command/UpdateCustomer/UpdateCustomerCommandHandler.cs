@@ -5,7 +5,7 @@ using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using CustomerApi.EventBus.Send.Sender.v1;
 using MediatR;
 
-namespace CustomerApi.Service.v1.Command
+namespace CustomerApi.Service.v1.Command.UpdateCustomer
 {
     public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand, Customer>
     {

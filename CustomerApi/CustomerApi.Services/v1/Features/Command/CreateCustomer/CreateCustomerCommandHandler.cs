@@ -5,7 +5,7 @@ using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate.Rules;
 using MediatR;
 
-namespace CustomerApi.Service.v1.Command
+namespace CustomerApi.Service.v1.Command.CreateCustomer
 {
     public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, Customer>
     {
