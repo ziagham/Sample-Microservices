@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using OrderApi.EventBus.Receive.Options.v1;
-using OrderApi.Service.v1.Services;
+using OrderApi.Services.v1.Services;
 using OrderApi.Services.v1.Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;

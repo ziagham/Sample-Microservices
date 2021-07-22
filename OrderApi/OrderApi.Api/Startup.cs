@@ -23,9 +23,9 @@ namespace OrderApi.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
+            services.AddServiceLayer();
             services.AddHostedExtension(Configuration);
             services.AddPersistenceInfrastructure(Configuration);
-            services.AddServiceLayer();
             services.AddSwaggerExtension();
             services.AddControllers();
             services.AddFluentValidation(cfg =>

@@ -7,6 +7,7 @@ using OrderApi.Data.Database;
 using System;
 using OrderApi.EventBus.Receive.Options.v1;
 using OrderApi.EventBus.Receive.Receiver.v1;
+using OrderApi.Services.v1.Services;
 
 namespace OrderApi.Api.Extensions
 {
@@ -39,6 +40,8 @@ namespace OrderApi.Api.Extensions
             var serviceClientSettingsConfig = configuration.GetSection("RabbitMq");
             var serviceClientSettings = serviceClientSettingsConfig.Get<RabbitMqConfiguration>();
             services.Configure<RabbitMqConfiguration>(serviceClientSettingsConfig);
+
+            services.AddTransient<ICustomerNameUpdateService, CustomerNameUpdateService>();
 
              if (serviceClientSettings.Enabled)
             {

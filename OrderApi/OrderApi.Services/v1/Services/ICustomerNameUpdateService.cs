@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using OrderApi.Services.v1.Models;
 
-namespace OrderApi.Service.v1.Services
+namespace OrderApi.Services.v1.Services
 {
     public interface ICustomerNameUpdateService
     {

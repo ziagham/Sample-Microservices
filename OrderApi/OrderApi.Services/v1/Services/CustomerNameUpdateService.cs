@@ -5,7 +5,6 @@ using OrderApi.Service.v1.Command;
 using OrderApi.Service.v1.Command.UpdateOrder;
 using OrderApi.Service.v1.Query;
 using OrderApi.Service.v1.Query.GetOrderByCustomer;
-using OrderApi.Service.v1.Services;
 using OrderApi.Services.v1.Models;
 
 namespace OrderApi.Services.v1.Services

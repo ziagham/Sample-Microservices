@@ -3,6 +3,7 @@ using MediatR;
 using System.Reflection;
 using OrderApi.Data.Repository.v1;
 using OrderApi.Service.v1.Behaviors;
+using OrderApi.Services.v1.Services;
 
 namespace OrderApi.Service.v1
 {
