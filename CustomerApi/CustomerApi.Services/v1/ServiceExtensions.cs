@@ -13,11 +13,11 @@ namespace CustomerApi.Service.v1
         public static IServiceCollection AddServiceLayer(this IServiceCollection services)
         {
             // Inject Repositories
-            services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             // Inject Rules
-            services.AddTransient<ICustomerUniquenessChecker, CustomerUniquenessChecker>();
+            services.AddScoped<ICustomerUniquenessChecker, CustomerUniquenessChecker>();
 
             // Inject 3rd parties
             services.AddMediatR(Assembly.GetExecutingAssembly());

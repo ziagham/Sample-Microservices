@@ -39,9 +39,9 @@ namespace CustomerApi.Domain.AggregatesModel.CustomerAggregate
             return new Customer(Guid.NewGuid(), firstName, lastName, email, birthDate);
         }
 
-        public static Customer UpdateCustomer(string firstName, string lastName, string email, DateTime birthDate)
+        public static Customer UpdateCustomer(Guid id, string firstName, string lastName, string email, DateTime birthDate)
         {
-            return new Customer(Guid.NewGuid(), firstName, lastName, email, null);
+            return new Customer(id, firstName, lastName, email, birthDate);
         }
         #endregion
     }

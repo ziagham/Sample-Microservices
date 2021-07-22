@@ -54,12 +54,15 @@ namespace OrderApi.Api.Extensions
             {
                 services.AddDbContext<OrderContext>(options =>
                 {
-                    options.UseSqlServer(configuration.GetConnectionString("CustomerDatabase"));
+                    options.UseSqlServer(configuration.GetConnectionString("OrderDatabase"));
                 });
             }
             else
             {
-                services.AddDbContext<OrderContext>(options => options.UseInMemoryDatabase("ApplicationDb"));
+                services.AddDbContext<OrderContext>(options => {
+                    options.UseInMemoryDatabase("OrderDb");
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                });
             }
         }
 

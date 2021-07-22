@@ -67,7 +67,10 @@ namespace CustomerApi.Api.Extensions
             }
             else
             {
-                services.AddDbContext<CustomerContext>(options => options.UseInMemoryDatabase("ApplicationDb"));
+                services.AddDbContext<CustomerContext>(options => {
+                    options.UseInMemoryDatabase("CustomerDb");
+                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                });
             }
         }
 

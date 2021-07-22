@@ -10,15 +10,12 @@ namespace CustomerApi.Service.v1.Command.CreateCustomer
 {
     public class CreateCustomerCommandHandler : IRequestHandler<CreateCustomerCommand, Customer>
     {
-        private readonly ICustomerUpdateSender _customerUpdateSender;
         private readonly ICustomerRepository _customerRepository;
         private readonly ICustomerUniquenessChecker _customerUniquenessChecker;
         
-        public CreateCustomerCommandHandler(ICustomerUpdateSender customerUpdateSender, 
-                                            ICustomerRepository customerRepository, 
+        public CreateCustomerCommandHandler(ICustomerRepository customerRepository, 
                                             ICustomerUniquenessChecker customerUniquenessChecker)
         {
-            _customerUpdateSender = customerUpdateSender;
             _customerRepository = customerRepository;
             _customerUniquenessChecker = customerUniquenessChecker;
         }
@@ -28,8 +25,6 @@ namespace CustomerApi.Service.v1.Command.CreateCustomer
             var createCustomer = Customer.CreateCustomer(request.FirstName, request.LastName, request.Email, request.BirthDate, this._customerUniquenessChecker);
             var customer = await _customerRepository.AddAsync(createCustomer);
             
-            //_customerUpdateSender.SendCustomer(customer);
-
             return customer;
         }
     }

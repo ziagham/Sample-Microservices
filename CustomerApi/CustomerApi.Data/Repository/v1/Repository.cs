@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CustomerApi.Data.Database;
 using CustomerApi.Domain.SeekWork;
+using Microsoft.EntityFrameworkCore;
 
 namespace CustomerApi.Data.Repository.v1
 {

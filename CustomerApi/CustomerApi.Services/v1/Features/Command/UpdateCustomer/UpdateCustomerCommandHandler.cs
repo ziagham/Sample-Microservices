@@ -20,7 +20,7 @@ namespace CustomerApi.Service.v1.Command.UpdateCustomer
 
         public async Task<Customer> Handle(UpdateCustomerCommand request, CancellationToken cancellationToken)
         {
-            var updatedCustomer = Customer.UpdateCustomer(request.FirstName, request.LastName, request.Email, request.BirthDate);
+            var updatedCustomer = Customer.UpdateCustomer(request.Id, request.FirstName, request.LastName, request.Email, request.BirthDate);
             var customer = await _customerRepository.UpdateAsync(updatedCustomer);
 
             _customerUpdateSender.SendCustomer(customer);
