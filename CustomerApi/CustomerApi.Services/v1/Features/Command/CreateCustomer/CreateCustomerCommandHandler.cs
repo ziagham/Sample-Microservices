@@ -28,7 +28,7 @@ namespace CustomerApi.Service.v1.Command.CreateCustomer
             var createCustomer = Customer.CreateCustomer(request.FirstName, request.LastName, request.Email, request.BirthDate, this._customerUniquenessChecker);
             var customer = await _customerRepository.AddAsync(createCustomer);
             
-            _customerUpdateSender.SendCustomer(customer);
+            //_customerUpdateSender.SendCustomer(customer);
 
             return customer;
         }

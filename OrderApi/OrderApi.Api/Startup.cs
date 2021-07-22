@@ -1,14 +1,14 @@
-using CustomerApi.Api.Extensions;
-using CustomerApi.Service.v1;
+using OrderApi.Api.Extensions;
+using OrderApi.Service.v1;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation.AspNetCore;
-using CustomerApi.Service.v1.Exceptions;
+using OrderApi.Service.v1.Exceptions;
 
-namespace CustomerApi.Api
+namespace OrderApi.Api
 {
     public class Startup
     {
@@ -23,7 +23,7 @@ namespace CustomerApi.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
-            services.AddEventBusExtension(Configuration);
+            services.AddHostedExtension(Configuration);
             services.AddPersistenceInfrastructure(Configuration);
             services.AddServiceLayer();
             services.AddSwaggerExtension();

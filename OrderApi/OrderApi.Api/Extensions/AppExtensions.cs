@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CustomerApi.Api.Middlewares;
+using OrderApi.Api.Middlewares;
 
-namespace CustomerApi.Api.Extensions
+namespace OrderApi.Api.Extensions
 {
     public static class AppExtensions
     {

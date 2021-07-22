@@ -1,4 +1,4 @@
-namespace CustomerApi.EventBus.Send.Options.v1
+namespace OrderApi.EventBus.Receive.Options.v1
 {
     public class RabbitMqConfiguration
     {
@@ -6,5 +6,6 @@ namespace CustomerApi.EventBus.Send.Options.v1
         public string QueueName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+        public bool Enabled { get; set; }
     }
 }

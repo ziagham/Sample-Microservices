@@ -1,6 +1,6 @@
-using CustomerApi.Service.v1;
-using CustomerApi.Service.v1.Exceptions;
-using CustomerApi.Service.v1.Wrappers;
+using OrderApi.Service.v1;
+using OrderApi.Service.v1.Exceptions;
+using OrderApi.Service.v1.Wrappers;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Net;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace CustomerApi.Api.Middlewares
+namespace OrderApi.Api.Middlewares
 {
     public class ErrorHandlerMiddleware
     {

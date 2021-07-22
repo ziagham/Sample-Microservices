@@ -1,14 +1,14 @@
-using CustomerApi.Data.Database;
-using CustomerApi.EventBus.Send.Options.v1;
-using CustomerApi.EventBus.Send.Sender.v1;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using OrderApi.Data.Database;
 using System;
+using OrderApi.EventBus.Receive.Options.v1;
+using OrderApi.EventBus.Receive.Receiver.v1;
 
-namespace CustomerApi.Api.Extensions
+namespace OrderApi.Api.Extensions
 {
     public static class ServiceExtensions
     {
@@ -34,23 +34,15 @@ namespace CustomerApi.Api.Extensions
             });
         }
 
-        public static void AddEventBusExtension(this IServiceCollection services, IConfiguration configuration)
+        public static void AddHostedExtension(this IServiceCollection services, IConfiguration configuration)
         {
             var serviceClientSettingsConfig = configuration.GetSection("RabbitMq");
+            var serviceClientSettings = serviceClientSettingsConfig.Get<RabbitMqConfiguration>();
             services.Configure<RabbitMqConfiguration>(serviceClientSettingsConfig);
 
-            serviceClientSettingsConfig = configuration.GetSection("AzureServiceBus");
-            services.Configure<AzureServiceBusConfiguration>(serviceClientSettingsConfig);
-
-            bool.TryParse(configuration["BaseServiceSettings:UserabbitMq"], out var useRabbitMq);
-
-            if (useRabbitMq)
+             if (serviceClientSettings.Enabled)
             {
-                services.AddSingleton<ICustomerUpdateSender, CustomerUpdateSender>();
-            }
-            else
-            {
-                services.AddSingleton<ICustomerUpdateSender, CustomerUpdateSenderServiceBus>();
+                services.AddHostedService<CustomerFullNameUpdateReceiver>();
             }
         }
 
@@ -60,14 +52,14 @@ namespace CustomerApi.Api.Extensions
 
             if (!useInMemory)
             {
-                services.AddDbContext<CustomerContext>(options =>
+                services.AddDbContext<OrderContext>(options =>
                 {
                     options.UseSqlServer(configuration.GetConnectionString("CustomerDatabase"));
                 });
             }
             else
             {
-                services.AddDbContext<CustomerContext>(options => options.UseInMemoryDatabase("ApplicationDb"));
+                services.AddDbContext<OrderContext>(options => options.UseInMemoryDatabase("ApplicationDb"));
             }
         }
 

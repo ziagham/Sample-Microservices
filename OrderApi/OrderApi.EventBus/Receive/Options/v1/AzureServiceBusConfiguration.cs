@@ -1,4 +1,4 @@
-namespace CustomerApi.EventBus.Send.Options.v1
+namespace OrderApi.EventBus.Receive.Options.v1
 {
     public class AzureServiceBusConfiguration
     {

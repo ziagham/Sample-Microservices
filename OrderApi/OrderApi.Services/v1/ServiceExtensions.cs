@@ -1,12 +1,10 @@
 using Microsoft.Extensions.DependencyInjection;
-using CustomerApi.Data.Repository.v1;
-using CustomerApi.Data.Rules.v1;
-using CustomerApi.Domain.AggregatesModel.CustomerAggregate.Rules;
 using MediatR;
 using System.Reflection;
-using CustomerApi.Service.v1.Behaviors;
+using OrderApi.Data.Repository.v1;
+using OrderApi.Service.v1.Behaviors;
 
-namespace CustomerApi.Service.v1
+namespace OrderApi.Service.v1
 {
     public static class ServiceExtensions
     {
@@ -14,10 +12,7 @@ namespace CustomerApi.Service.v1
         {
             // Inject Repositories
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
-            services.AddTransient<ICustomerRepository, CustomerRepository>();
-
-            // Inject Rules
-            services.AddTransient<ICustomerUniquenessChecker, CustomerUniquenessChecker>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             // Inject 3rd parties
             services.AddMediatR(Assembly.GetExecutingAssembly());

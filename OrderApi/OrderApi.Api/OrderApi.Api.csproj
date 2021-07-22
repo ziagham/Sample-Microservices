@@ -16,9 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerApi.EventBus\CustomerApi.EventBus.csproj" />
-    <ProjectReference Include="..\CustomerApi.Services\CustomerApi.Services.csproj" />
-    <ProjectReference Include="..\CustomerApi.Data\CustomerApi.Data.csproj" />
+    <ProjectReference Include="..\OrderApi.Services\OrderApi.Services.csproj" />
+    <ProjectReference Include="..\OrderApi.Data\OrderApi.Data.csproj" />
+    <ProjectReference Include="..\OrderApi.Domain\OrderApi.Domain.csproj" />
+    <ProjectReference Include="..\OrderApi.EventBus\OrderApi.EventBus.csproj" />
   </ItemGroup>
 
 </Project>

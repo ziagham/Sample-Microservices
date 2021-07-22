@@ -6,9 +6,9 @@ namespace OrderApi.Domain.AggregatesModel.OrderAggregate
     public class Order : Entity
     {
         #region properties
-        public int OrderState { get; private set; }
-        public Guid CustomerGuid { get; private set; }
-        public string CustomerFullName { get; private set; }
+        public int OrderState { get; set; }
+        public Guid CustomerGuid { get; set; }
+        public string CustomerFullName { get; set; }
         #endregion
 
         #region constructors
