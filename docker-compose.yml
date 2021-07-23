@@ -12,15 +12,36 @@ services:
         - RABBITMQ_DEFAULT_USER=guest
         - RABBITMQ_DEFAULT_PASS=guest        
     image: rabbitmq:3-management
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 1
 
   customerapi:
-    image: customerapi
-    build:
-      context: .
-      dockerfile: CustomerApi/Dockerfile
+    container_name: customerapi
+    image: customerapi:latest
     ports:
-        - 8000:80
-        - 8001:443  
-    restart: on-failure        
+      - 8000:80
+      - 8001:443
+    environment:
+      - HOSTNAMERABBIT=rabbitmq
+    restart: on-failure     
     depends_on:
-        - rabbitmq
+      - rabbitmq
+    links: 
+      - rabbitmq
+
+  orderapi:
+    container_name: orderapi
+    image: orderapi:latest
+    ports:
+      - 9000:80
+      - 9001:443
+    environment:
+      - HOSTNAMERABBIT=rabbitmq
+    restart: on-failure     
+    depends_on:
+      - rabbitmq
+    links: 
+      - rabbitmq
