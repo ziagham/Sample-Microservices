@@ -38,15 +38,34 @@ namespace OrderApi.Api.Extensions
         public static void AddHostedExtension(this IServiceCollection services, IConfiguration configuration)
         {
             var serviceClientSettingsConfig = configuration.GetSection("RabbitMq");
-            var serviceClientSettings = serviceClientSettingsConfig.Get<RabbitMqConfiguration>();
             services.Configure<RabbitMqConfiguration>(serviceClientSettingsConfig);
+
+            serviceClientSettingsConfig = configuration.GetSection("AzureServiceBus");
+            services.Configure<AzureServiceBusConfiguration>(serviceClientSettingsConfig);
 
             services.AddTransient<ICustomerNameUpdateService, CustomerNameUpdateService>();
 
-             if (serviceClientSettings.Enabled)
+            bool.TryParse(configuration["BaseServiceSettings:UserabbitMq"], out var useRabbitMq);
+
+            if (useRabbitMq)
             {
                 services.AddHostedService<CustomerFullNameUpdateReceiver>();
             }
+            else
+            {
+                services.AddHostedService<CustomerFullNameUpdateReceiverServiceBus>();
+            }
+
+            // var serviceClientSettingsConfig = configuration.GetSection("RabbitMq");
+            // var serviceClientSettings = serviceClientSettingsConfig.Get<RabbitMqConfiguration>();
+            // services.Configure<RabbitMqConfiguration>(serviceClientSettingsConfig);
+
+            // services.AddTransient<ICustomerNameUpdateService, CustomerNameUpdateService>();
+
+            //  if (serviceClientSettings.Enabled)
+            // {
+            //     services.AddHostedService<CustomerFullNameUpdateReceiver>();
+            // }
         }
 
         public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)

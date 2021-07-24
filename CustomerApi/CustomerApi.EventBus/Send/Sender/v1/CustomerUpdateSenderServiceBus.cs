@@ -3,6 +3,7 @@ using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using CustomerApi.EventBus.Send.Options.v1;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
+using System;
 
 namespace CustomerApi.EventBus.Send.Sender.v1
 {
@@ -19,7 +20,6 @@ namespace CustomerApi.EventBus.Send.Sender.v1
 
         public async void SendCustomer(Customer customer)
         {
-            // todo add exception handling when queue is not accessible
             await using (var client = new ServiceBusClient(_connectionString))
             {
                 var sender = client.CreateSender(_queueName);
