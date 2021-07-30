@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Api", "OrderApi.Api\OrderApi.Api.csproj", "{D11632EF-F0F0-4C5C-8655-92277C6A32A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Api", "Src\OrderApi.Api\OrderApi.Api.csproj", "{D11632EF-F0F0-4C5C-8655-92277C6A32A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Data", "OrderApi.Data\OrderApi.Data.csproj", "{4BEE8AF8-8D9E-405C-9EF4-3845D1A5F83B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Data", "Src\OrderApi.Data\OrderApi.Data.csproj", "{4BEE8AF8-8D9E-405C-9EF4-3845D1A5F83B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Domain", "OrderApi.Domain\OrderApi.Domain.csproj", "{5820926C-6FA4-4AE6-A927-27ABF8C3C855}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Domain", "Src\OrderApi.Domain\OrderApi.Domain.csproj", "{5820926C-6FA4-4AE6-A927-27ABF8C3C855}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.EventBus", "OrderApi.EventBus\OrderApi.EventBus.csproj", "{89A3ACAA-B4F3-4DFD-9154-B2843F1065F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.EventBus", "Src\OrderApi.EventBus\OrderApi.EventBus.csproj", "{89A3ACAA-B4F3-4DFD-9154-B2843F1065F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Services", "OrderApi.Services\OrderApi.Services.csproj", "{29F76DB7-E51E-4D9D-8241-C7C4C572B05F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApi.Services", "Src\OrderApi.Services\OrderApi.Services.csproj", "{29F76DB7-E51E-4D9D-8241-C7C4C572B05F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

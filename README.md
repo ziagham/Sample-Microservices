@@ -1,4 +1,4 @@
-# Microservices_Docker_RabbitMQ
+# Sample Microservices
 
     docker build -t customerapi .
     docker build -t orderapi .
