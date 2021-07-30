@@ -15,12 +15,12 @@ namespace CustomerApi.Data.Repository.v1
 
         public async Task<Customer> GetCustomerByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            return await CustomerContext.Customer.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            return await CustomerContext.Customers.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
         }
 
         public async Task<bool> IsEmailUniqueAsync(string email)
         {
-            return await CustomerContext.Customer.CountAsync(e => e.Email.ToLower() == email.ToLower()) <= 0;
+            return await CustomerContext.Customers.CountAsync(e => e.Email.ToLower() == email.ToLower()) <= 0;
         }
     }
 }

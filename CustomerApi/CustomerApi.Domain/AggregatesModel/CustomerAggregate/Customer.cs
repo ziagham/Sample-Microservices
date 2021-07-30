@@ -33,10 +33,16 @@ namespace CustomerApi.Domain.AggregatesModel.CustomerAggregate
         public static Customer CreateCustomer(string firstName, string lastName, string email, DateTime birthDate, 
         ICustomerUniquenessChecker customerUniquenessChecker = null)
         {
+            return Customer.CreateCustomer(Guid.NewGuid(),firstName, lastName, email, birthDate);
+        }
+
+        public static Customer CreateCustomer(Guid id, string firstName, string lastName, string email, DateTime birthDate, 
+        ICustomerUniquenessChecker customerUniquenessChecker = null)
+        {
             if (customerUniquenessChecker != null)
                 CheckRule(new CustomerEmailMustBeUniqueRule(customerUniquenessChecker, email));
             
-            return new Customer(Guid.NewGuid(), firstName, lastName, email, birthDate);
+            return new Customer(id, firstName, lastName, email, birthDate);
         }
 
         public static Customer UpdateCustomer(Guid id, string firstName, string lastName, string email, DateTime birthDate)
