@@ -2,12 +2,12 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
-using OrderApi.Data.Database;
+using OrderApi.Data.v1.Database;
 using System.Collections.Generic;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 
-namespace OrderApi.Data.Repository.v1
+namespace OrderApi.Data.v1.Repository
 {
     public class OrderRepository : Repository<Order>, IOrderRepository
     {

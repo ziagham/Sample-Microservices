@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using System.Reflection;
-using OrderApi.Data.Repository.v1;
+using OrderApi.Data.v1.Repository;
 using OrderApi.Service.v1.Behaviors;
 using OrderApi.Services.v1.Services;
 

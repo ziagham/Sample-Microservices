@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using OrderApi.Data.Repository.v1;
+using OrderApi.Data.v1.Repository;
 using MediatR;
 using OrderApi.Service.v1.Query.GetOrderById;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;

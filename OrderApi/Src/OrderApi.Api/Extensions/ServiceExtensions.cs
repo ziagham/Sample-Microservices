@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using OrderApi.Data.Database;
 using System;
 using OrderApi.EventBus.Receive.Options.v1;
 using OrderApi.EventBus.Receive.Receiver.v1;
@@ -57,25 +56,25 @@ namespace OrderApi.Api.Extensions
             }
         }
 
-        public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
-        {
-            bool.TryParse(configuration["BaseServiceSettings:UseInMemoryDatabase"], out var useInMemory);
+        // public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        // {
+        //     bool.TryParse(configuration["BaseServiceSettings:UseInMemoryDatabase"], out var useInMemory);
 
-            if (!useInMemory)
-            {
-                services.AddDbContext<OrderContext>(options =>
-                {
-                    options.UseSqlServer(configuration.GetConnectionString("OrderDatabase"));
-                });
-            }
-            else
-            {
-                services.AddDbContext<OrderContext>(options => {
-                    options.UseInMemoryDatabase("OrderDb");
-                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                });
-            }
-        }
+        //     if (!useInMemory)
+        //     {
+        //         services.AddDbContext<OrderContext>(options =>
+        //         {
+        //             options.UseSqlServer(configuration.GetConnectionString("OrderDatabase"));
+        //         });
+        //     }
+        //     else
+        //     {
+        //         services.AddDbContext<OrderContext>(options => {
+        //             options.UseInMemoryDatabase("OrderDb");
+        //             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        //         });
+        //     }
+        // }
 
         public static void AddApiVersioningExtension(this IServiceCollection services)
         {

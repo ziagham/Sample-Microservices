@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using OrderApi.Data.Repository.v1;
+using OrderApi.Data.v1.Repository;
 using MediatR;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 using System;

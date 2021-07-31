@@ -1,5 +1,6 @@
 using OrderApi.Api.Extensions;
 using OrderApi.Service.v1;
+using OrderApi.Data.v1;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,7 +26,7 @@ namespace OrderApi.Api
             services.AddOptions();
             services.AddServiceLayer();
             services.AddHostedExtension(Configuration);
-            services.AddPersistenceInfrastructure(Configuration);
+            services.AddPersistence(Configuration);
             services.AddSwaggerExtension();
             services.AddControllers();
             services.AddFluentValidation(cfg =>

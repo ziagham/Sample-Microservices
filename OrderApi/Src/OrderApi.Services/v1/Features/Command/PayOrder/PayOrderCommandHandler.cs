@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using OrderApi.Data.Repository.v1;
+using OrderApi.Data.v1.Repository;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
 namespace OrderApi.Service.v1.Command.PayOrder
