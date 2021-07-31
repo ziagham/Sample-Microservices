@@ -16,7 +16,7 @@ namespace CustomerApi.Domain.AggregatesModel.CustomerAggregate
 
         #region constructors
         // Empty constructor for EF
-        private Customer() { }
+        public Customer() { }
 
         private Customer(Guid id, string firstName, string lastName, string email, DateTime? birthDate)
         {

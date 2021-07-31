@@ -60,7 +60,7 @@ namespace CustomerApi.Data.v1.Database
                     "Reeves",
                     "keanu.reeves@domain.com",
                     new DateTime(1964, 09, 02)
-                ),
+                )
             };
 
             if (!dbContext.Customers.Any())

@@ -10,8 +10,7 @@ namespace CustomerApi.Data.v1.Repository
     public class CustomerRepository : Repository<Customer>, ICustomerRepository
     {
         public CustomerRepository(CustomerContext customerContext) : base(customerContext)
-        {
-        }
+        {}
 
         public async Task<Customer> GetCustomerByIdAsync(Guid id, CancellationToken cancellationToken)
         {
