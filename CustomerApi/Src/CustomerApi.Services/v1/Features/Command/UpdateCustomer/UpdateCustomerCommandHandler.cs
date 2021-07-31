@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using CustomerApi.Data.Repository.v1;
+using CustomerApi.Data.v1.Repository;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using CustomerApi.EventBus.Send.Sender.v1;
 using MediatR;

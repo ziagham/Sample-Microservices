@@ -1,4 +1,3 @@
-using CustomerApi.Data.Database;
 using CustomerApi.EventBus.Send.Options.v1;
 using CustomerApi.EventBus.Send.Sender.v1;
 using Microsoft.AspNetCore.Mvc;
@@ -54,31 +53,26 @@ namespace CustomerApi.Api.Extensions
             }
         }
 
-        public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
-        {
-            bool.TryParse(configuration["BaseServiceSettings:UseInMemoryDatabase"], out var useInMemory);
+        // public static void AddPersistenceInfrastructure(this IServiceCollection services, IConfiguration configuration)
+        // {
+        //     bool.TryParse(configuration["BaseServiceSettings:UseInMemoryDatabase"], out var useInMemory);
 
-            if (!useInMemory)
-            {
-                services.AddDbContext<CustomerContext>(options =>
-                {
-                    options.UseSqlServer(configuration.GetConnectionString("CustomerDatabase"));
-                }, ServiceLifetime.Singleton);
-            }
-            else
-            {
-                services.AddDbContext<CustomerContext>(options => 
-                {
-                    options.UseInMemoryDatabase("CustomerDb");
-                    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                }, ServiceLifetime.Singleton);
-
-                // services.AddDbContext<CustomerContext>(options => {
-                //     options.UseInMemoryDatabase("CustomerDb");
-                //     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                // });
-            }
-        }
+        //     if (!useInMemory)
+        //     {
+        //         services.AddDbContext<CustomerContext>(options =>
+        //         {
+        //             options.UseSqlServer(configuration.GetConnectionString("CustomerDatabase"));
+        //         }, ServiceLifetime.Singleton);
+        //     }
+        //     else
+        //     {
+        //         services.AddDbContext<CustomerContext>(options => 
+        //         {
+        //             options.UseInMemoryDatabase("CustomerDb");
+        //             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+        //         }, ServiceLifetime.Singleton);
+        //     }
+        // }
 
         public static void AddApiVersioningExtension(this IServiceCollection services)
         {

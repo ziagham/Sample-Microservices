@@ -3,7 +3,9 @@ version: '3.4'
 services:
   customerapi:
     container_name: customerapi
-    image: sample-microservices_customerapi:latest
+    build:
+      context: ./CustomerApi
+      dockerfile: Dockerfile
     ports:
       - 5000:80
       - 5001:443
@@ -11,7 +13,9 @@ services:
 
   orderapi:
     container_name: orderapi
-    image: sample-microservices_orderapi:latest
+    build:
+      context: ./OrderApi
+      dockerfile: Dockerfile
     ports:
       - 6000:80
       - 6001:443

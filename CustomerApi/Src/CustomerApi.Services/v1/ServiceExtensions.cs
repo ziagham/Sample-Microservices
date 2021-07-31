@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using CustomerApi.Data.Repository.v1;
-using CustomerApi.Data.Rules.v1;
+using CustomerApi.Data.v1.Repository;
+using CustomerApi.Data.v1.Rules;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate.Rules;
 using MediatR;
 using System.Reflection;

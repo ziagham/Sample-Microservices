@@ -3,31 +3,26 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
-WORKDIR /src
+WORKDIR /source
 
 COPY *.sln .
 
-COPY CustomerApi.Api/*.csproj ./CustomerApi.Api/
-COPY CustomerApi.Data/*.csproj ./CustomerApi.Data/
-COPY CustomerApi.Domain/*.csproj ./CustomerApi.Domain/
-COPY CustomerApi.EventBus/*.csproj ./CustomerApi.EventBus/
-COPY CustomerApi.Services/*.csproj ./CustomerApi.Services/
+COPY Src/CustomerApi.Api/*.csproj ./Src/CustomerApi.Api/
+COPY Src/CustomerApi.Data/*.csproj ./Src/CustomerApi.Data/
+COPY Src/CustomerApi.Domain/*.csproj ./Src/CustomerApi.Domain/
+COPY Src/CustomerApi.EventBus/*.csproj ./Src/CustomerApi.EventBus/
+COPY Src/CustomerApi.Services/*.csproj ./Src/CustomerApi.Services/
 
-# Restore to cache the layers
 RUN dotnet restore
 
-# copy full solution over
 COPY . .
 RUN dotnet build
 
-# publish the API
 FROM build AS publish
-WORKDIR /src/CustomerApi.Api
+WORKDIR /source/Src/CustomerApi.Api
 RUN dotnet publish -c Release -o /app/publish --no-restore 
 
-# run the api
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish ./ 

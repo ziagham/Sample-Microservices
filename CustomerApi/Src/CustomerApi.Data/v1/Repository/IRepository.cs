@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CustomerApi.Domain.SeekWork;
 
-namespace CustomerApi.Data.Repository.v1
+namespace CustomerApi.Data.v1.Repository
 {
     public interface IRepository<TEntity> where TEntity : Entity
     {

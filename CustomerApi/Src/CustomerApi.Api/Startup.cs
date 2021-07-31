@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation.AspNetCore;
 using CustomerApi.Service.v1.Exceptions;
+using CustomerApi.Data.v1;
 
 namespace CustomerApi.Api
 {
@@ -24,7 +25,7 @@ namespace CustomerApi.Api
         {
             services.AddOptions();
             services.AddEventBusExtension(Configuration);
-            services.AddPersistenceInfrastructure(Configuration);
+            services.AddPersistence(Configuration);
             services.AddServiceLayer();
             services.AddSwaggerExtension();
             services.AddControllers();

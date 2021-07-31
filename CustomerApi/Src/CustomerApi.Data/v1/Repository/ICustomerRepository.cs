@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 
-namespace CustomerApi.Data.Repository.v1
+namespace CustomerApi.Data.v1.Repository
 {
     public interface ICustomerRepository: IRepository<Customer>
     {
