@@ -118,4 +118,4 @@ On the other hand, Order service also have some REST methods.
 
 
 ## Future works
-ApiGateway (e.g, Ocelot, Azure Api-Management) can also be used for better manage and integrate requests.
+ApiGateway (e.g, Ocelot, Azure Api-Management) can also be used for better manage and integrate requests. In addition, the outbox pattern can be used to ensure that events were delivered to eventbus (in some cases that eventbus was not available for a while).
