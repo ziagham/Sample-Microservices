@@ -8,37 +8,37 @@ This program is a sample microservices that implemented via different patterns a
 This program is implemented in C# programming language and uses .NET 5 technology.
 Below you will find a complete list of technologies, tools, environments, methodologies, and patterns used to implement this program.
 
-+ Languages and Frameworks
-    + C# 9.0
-    + .NET 5 (.NET core)
-    + LINQ
+- **Languages and Frameworks**
+    C# 9.0
+    .NET 5 (.NET core)
+    LINQ
 
-+ Operating System
-    + Linux Operating System (Ubuntu 18.04 LTS)
+- **Operating System**
+    Linux Operating System (Ubuntu 18.04 LTS)
 
-+ IDE
-    + VS Code 1.58.2
+- **IDE (Integrated Development Environment)**
+    VS Code 1.58.2
 
-+ Paradigm
-    + Object-Oriented Programming (OOP)
-    + Dependency Injection (DI)
+- **Paradigms**
+    Object-Oriented Programming (OOP)
+    Dependency Injection (DI)
 
-+ Patterns and Architectures
-    + Repository Pattern
-    + MediatR (as Mediator Pattern)
-    + Event-Driven Design (EDD) {RabbitMq and Azure ServiceBus}
+- **Patterns and Architectures**
+    Repository Pattern
+    MediatR (as Mediator Pattern)
+    Event-Driven Design (EDD) {RabbitMq and Azure ServiceBus}
 
-+ Databses
-    + InMemoryDatabase
-    + SqlServer 
+- **Databses**
+    InMemoryDatabase
+    SqlServer 
 
-+ IDL
-    + Swagger (Interface description language)
+- **IDL (Interface description language)**
+    Swagger 
 
-+ Other tools
-    + FluentValidation
+- **Other tools**
+    FluentValidation
 
-+ Unit Testing
-    + xUnit 2.4.1
-    + FakeItEasy 7.1.0
-    + FluentAssertions 5.10.3
+- **Testing tools**
+    xUnit 2.4.1
+    FakeItEasy 7.1.0
+    FluentAssertions 5.10.3
