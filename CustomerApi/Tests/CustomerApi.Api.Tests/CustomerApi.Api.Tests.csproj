@@ -22,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\CustomerApi.Services\CustomerApi.Services.csproj" />
     <ProjectReference Include="..\..\Src\CustomerApi.Api\CustomerApi.Api.csproj" />
   </ItemGroup>
 

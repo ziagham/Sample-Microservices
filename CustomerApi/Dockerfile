@@ -14,10 +14,16 @@ COPY Src/CustomerApi.Domain/*.csproj ./Src/CustomerApi.Domain/
 COPY Src/CustomerApi.EventBus/*.csproj ./Src/CustomerApi.EventBus/
 COPY Src/CustomerApi.Services/*.csproj ./Src/CustomerApi.Services/
 
+COPY Tests/CustomerApi.Api.Tests/*.csproj ./Tests/CustomerApi.Api.Tests/
+COPY Tests/CustomerApi.Data.Tests/*.csproj ./Tests/CustomerApi.Data.Tests/
+COPY Tests/CustomerApi.Services.Tests/*.csproj ./Tests/CustomerApi.Services.Tests/
+
 RUN dotnet restore
 
 COPY . .
 RUN dotnet build
+
+RUN dotnet test
 
 FROM build AS publish
 WORKDIR /source/Src/CustomerApi.Api

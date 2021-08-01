@@ -20,7 +20,7 @@ namespace OrderApi.Data.Tests.Infrastructure
 
         private static void Seed(OrderContext context)
         {
-            var orders = List<Order>()
+            var orders = new List<Order>()
             {
                 new Order
                 {

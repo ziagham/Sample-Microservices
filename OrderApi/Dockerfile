@@ -15,10 +15,16 @@ COPY Src/OrderApi.Domain/*.csproj ./Src/OrderApi.Domain/
 COPY Src/OrderApi.EventBus/*.csproj ./Src/OrderApi.EventBus/
 COPY Src/OrderApi.Services/*.csproj ./Src/OrderApi.Services/
 
+COPY Tests/OrderApi.Api.Tests/*.csproj ./Tests/OrderApi.Api.Tests/
+COPY Tests/OrderApi.Data.Tests/*.csproj ./Tests/OrderApi.Data.Tests/
+COPY Tests/OrderApi.Services.Tests/*.csproj ./Tests/OrderApi.Services.Tests/
+
 RUN dotnet restore
 
 COPY . .
 RUN dotnet build
+
+RUN dotnet test
 
 FROM build AS publish
 WORKDIR /source/Src/OrderApi.Api
