@@ -88,6 +88,8 @@ It is assumed that the docker is installed on your computer.
 
 ### Perform some operations
 
+To perform the following operations, it is assumed that the `cURL` tool is installed on your computer. Otherwise you can also use `Postman`.
+
 #### Customer Service
 
 Customer service includes some REST methods. These methods include Customer list, new customer registration and customer update. The following commands can be used to call each method.
