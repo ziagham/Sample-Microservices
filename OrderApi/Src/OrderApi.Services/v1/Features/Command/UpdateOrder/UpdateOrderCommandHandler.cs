@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using OrderApi.Data.Repository.v1;
@@ -17,7 +18,6 @@ namespace OrderApi.Services.v1.Features.Command.UpdateOrder
         public async Task<Unit> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
             await _orderRepository.UpdateRangeAsync(request.Orders);
-
             return Unit.Value;
         }
     }

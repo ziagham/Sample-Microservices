@@ -42,7 +42,7 @@ namespace OrderApi.Data.Database.v1
             {
                 new Order
                 {
-                    Id = Guid.Parse("9f35b48d-cb87-4783-bfdb-21e36012930a"),
+                    Id = Guid.Parse("c34a25d8-e786-4e00-9b70-6acf2e6187ac"),
                     OrderState = 1,
                     CustomerGuid = Guid.Parse("9f35b48d-cb87-4783-bfdb-21e36012930a"),
                     CustomerFullName = "Amin Ziagham"

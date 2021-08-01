@@ -21,8 +21,6 @@ namespace CustomerApi.Api.Controllers.v1
             _mediator = mediator;
         }
 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
         public async Task<ActionResult<List<Customer>>> Get()
         {
@@ -36,9 +34,6 @@ namespace CustomerApi.Api.Controllers.v1
             }
         }
 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         [HttpPost]
         public async Task<ActionResult<Customer>> Post(CreateCustomerCommand createCustomerCommand)
         {
@@ -52,9 +47,6 @@ namespace CustomerApi.Api.Controllers.v1
             }
         }
 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         [HttpPut]
         public async Task<ActionResult<Customer>> Put(UpdateCustomerCommand updateCustomerCommand)
         {
@@ -71,6 +63,7 @@ namespace CustomerApi.Api.Controllers.v1
                 }
 
                 return await _mediator.Send(updateCustomerCommand);
+
             }
             catch (Exception ex)
             {

@@ -6,7 +6,7 @@ namespace OrderApi.Domain.SeekWork
     public abstract class Entity: IAggregateRoot
     {
         public Guid Id { get; set; }
-        public DateTime CreatedUtc { get; }
+        public DateTime CreatedUtc { get; set; }
 
         public override bool Equals(object obj)
         {

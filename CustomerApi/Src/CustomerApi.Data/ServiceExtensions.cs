@@ -17,7 +17,7 @@ namespace CustomerApi.Data.v1
                 services.AddDbContext<CustomerContext>(options =>
                 {
                     options.UseSqlServer(configuration.GetConnectionString("CustomerDatabase"));
-                }, ServiceLifetime.Singleton);
+                });
                 
                 services.Migrate();
             }
@@ -27,7 +27,7 @@ namespace CustomerApi.Data.v1
                 {
                     options.UseInMemoryDatabase("CustomerDb");
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                }, ServiceLifetime.Singleton);
+                });
             }
 
             services.SeedData();

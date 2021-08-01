@@ -4,26 +4,23 @@ using System.Threading.Tasks;
 using CustomerApi.Data.Database.v1;
 using CustomerApi.Domain.SeekWork;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace CustomerApi.Data.Repository.v1
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
         protected readonly CustomerContext CustomerContext;
-        private readonly DbSet<TEntity> _entities;
 
         public Repository(CustomerContext customerContext)
         {
             CustomerContext = customerContext;
-            _entities = customerContext.Set<TEntity>();
         }
 
         public IEnumerable<TEntity> GetAll()
         {
             try
             {
-                return _entities.ToList();
+                return CustomerContext.Set<TEntity>();
             }
             catch (Exception ex)
             {
@@ -40,7 +37,7 @@ namespace CustomerApi.Data.Repository.v1
 
             try
             {
-                await _entities.AddAsync(entity);
+                await CustomerContext.AddAsync(entity);
                 await CustomerContext.SaveChangesAsync();
 
                 return entity;
@@ -60,7 +57,7 @@ namespace CustomerApi.Data.Repository.v1
 
             try
             {
-                _entities.Update(entity);
+                CustomerContext.Update(entity);
                 await CustomerContext.SaveChangesAsync();
 
                 return entity;

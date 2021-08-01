@@ -8,7 +8,7 @@ using FakeItEasy;
 using FluentAssertions;
 using Xunit;
 
-namespace CustomerApi.Data.Tests.v1.Repository
+namespace CustomerApi.Data.Tests.Repository.v1
 {
     public class RepositoryTests : DatabaseTestBase
     {
@@ -78,13 +78,13 @@ namespace CustomerApi.Data.Tests.v1.Repository
             Context.Customers.Count().Should().Be(CustomerCount + 1);
         }
 
-        // [Fact]
-        // public void GetAll_WhenExceptionOccurs_ThrowsException()
-        // {
-        //     A.CallTo(() => _CustomerContext.Set<Customer>()).Throws<Exception>();
+        [Fact]
+        public void GetAll_WhenExceptionOccurs_ThrowsException()
+        {
+            A.CallTo(() => _CustomerContext.Set<Customer>()).Throws<Exception>();
 
-        //     _testeeFake.Invoking(x => x.GetAll()).Should().Throw<Exception>().WithMessage("Couldn't retrieve entities: Exception of type 'System.Exception' was thrown.");
-        // }
+            _testeeFake.Invoking(x => x.GetAll()).Should().Throw<Exception>().WithMessage("Couldn't retrieve entities: Exception of type 'System.Exception' was thrown.");
+        }
 
         [Fact]
         public void UpdateAsync_WhenEntityIsNull_ThrowsException()

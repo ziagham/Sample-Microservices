@@ -21,8 +21,6 @@ namespace OrderApi.Api.Controllers.v1
             _mediator = mediator;
         }
 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
         public async Task<ActionResult<List<Order>>> Get()
         {
@@ -36,9 +34,6 @@ namespace OrderApi.Api.Controllers.v1
             }
         }
 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         [HttpPost]
         public async Task<ActionResult<Order>> Post(CreateOrderCommand createOrderCommand)
         {
@@ -52,9 +47,6 @@ namespace OrderApi.Api.Controllers.v1
             }
         }
 
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status422UnprocessableEntity)]
         [HttpPut("Pay/{id}")]
         public async Task<ActionResult<Order>> Pay(Guid id)
         {

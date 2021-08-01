@@ -30,10 +30,10 @@ namespace OrderApi.EventBus.Receive.Receiver.v1
             _username = rabbitMqOptions.Value.UserName;
             _password = rabbitMqOptions.Value.Password;
             _customerNameUpdateService = customerNameUpdateService;
-            InitializeRabbitMqListener();
+            InitializeServiceBusListener();
         }
 
-        private void InitializeRabbitMqListener()
+        private void InitializeServiceBusListener()
         {
             var factory = new ConnectionFactory
             {

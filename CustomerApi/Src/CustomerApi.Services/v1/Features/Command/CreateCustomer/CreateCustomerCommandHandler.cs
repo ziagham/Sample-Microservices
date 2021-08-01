@@ -22,7 +22,8 @@ namespace CustomerApi.Services.v1.Features.Command.CreateCustomer
                 FirstName = request.FirstName, 
                 LastName = request.LastName, 
                 Email = request.Email, 
-                BirthDate = request.BirthDate
+                BirthDate = request.BirthDate,
+                Active = true
             };
 
             var customer = await _customerRepository.AddAsync(createCustomer);

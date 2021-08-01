@@ -17,7 +17,7 @@ namespace OrderApi.Data.v1
                 services.AddDbContext<OrderContext>(options =>
                 {
                     options.UseSqlServer(configuration.GetConnectionString("OrderDatabase"));
-                }, ServiceLifetime.Singleton);
+                });
                 
                 services.Migrate();
             }
@@ -27,7 +27,7 @@ namespace OrderApi.Data.v1
                 {
                     options.UseInMemoryDatabase("OrderDb");
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                }, ServiceLifetime.Singleton);
+                });
             }
 
             services.SeedData();

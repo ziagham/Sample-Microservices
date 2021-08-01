@@ -28,7 +28,6 @@ namespace CustomerApi.Services.v1.Features.Command.UpdateCustomer
                 BirthDate = request.BirthDate
             };
             
-            //Customer.UpdateCustomer(request.Id, request.FirstName, request.LastName, request.Email, request.BirthDate);
             var customer = await _customerRepository.UpdateAsync(updatedCustomer);
 
             _customerUpdateSender.SendCustomer(customer);

@@ -25,10 +25,10 @@ namespace OrderApi.EventBus.Receive.Receiver.v1
             _connectionString = serviceBusOptions.Value.ConnectionString;
             _queueName = serviceBusOptions.Value.QueueName;
             _customerNameUpdateService = customerNameUpdateService;
-            InitializeRabbitMqListener();
+            InitializeServiceBusListener();
         }
 
-        private void InitializeRabbitMqListener()
+        private void InitializeServiceBusListener()
         {
             client = new ServiceBusClient(_connectionString);
             processor = client.CreateProcessor(_queueName, new ServiceBusProcessorOptions());
@@ -48,13 +48,10 @@ namespace OrderApi.EventBus.Receive.Receiver.v1
         {
             string body = args.Message.Body.ToString();
             var updateCustomerFullNameModel = JsonSerializer.Deserialize<UpdateCustomerFullNameModel>(body);
-
             HandleMessage(updateCustomerFullNameModel);
- 
             await args.CompleteMessageAsync(args.Message);
         }
 
-        // handle any errors when receiving messages
         private Task ErrorHandler(ProcessErrorEventArgs args)
         {
             Console.WriteLine(args.Exception.ToString());
