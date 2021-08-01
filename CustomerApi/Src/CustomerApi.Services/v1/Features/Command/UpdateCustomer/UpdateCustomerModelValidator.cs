@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace CustomerApi.Service.v1.Command.UpdateCustomer
+namespace CustomerApi.Services.v1.Features.Command.UpdateCustomer
 {
     public class UpdateCustomerModelValidator : AbstractValidator<UpdateCustomerCommand>
     {

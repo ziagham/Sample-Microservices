@@ -1,12 +1,12 @@
 using CustomerApi.Api.Extensions;
-using CustomerApi.Service.v1;
+using CustomerApi.Services.v1;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation.AspNetCore;
-using CustomerApi.Service.v1.Exceptions;
+using CustomerApi.Services.v1.Exceptions;
 using CustomerApi.Data.v1;
 
 namespace CustomerApi.Api

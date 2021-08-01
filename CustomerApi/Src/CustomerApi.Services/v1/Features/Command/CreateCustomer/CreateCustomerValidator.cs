@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace CustomerApi.Service.v1.Command.CreateCustomer
+namespace CustomerApi.Services.v1.Features.Command.CreateCustomer
 {
     public class CreateCustomerValidator : AbstractValidator<CreateCustomerCommand>
     {

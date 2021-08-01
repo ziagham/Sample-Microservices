@@ -4,7 +4,7 @@ using CustomerApi.Data.v1.Repository;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using MediatR;
 
-namespace CustomerApi.Service.v1.Query.GetCustomerById
+namespace CustomerApi.Services.v1.Features.Query.GetCustomerById
 {
     public class GetCustomerByIdQueryHandler : IRequestHandler<GetCustomerByIdQuery, Customer>
     {

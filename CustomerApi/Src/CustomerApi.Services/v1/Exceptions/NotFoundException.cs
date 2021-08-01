@@ -1,6 +1,6 @@
 using System;
 
-namespace CustomerApi.Service.v1.Exceptions
+namespace CustomerApi.Services.v1.Exceptions
 {
     public class NotFoundException : Exception
     {

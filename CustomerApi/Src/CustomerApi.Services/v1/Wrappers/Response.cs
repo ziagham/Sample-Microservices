@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CustomerApi.Service.v1.Wrappers
+namespace CustomerApi.Services.v1.Wrappers
 {
     public class Response<T>
     {

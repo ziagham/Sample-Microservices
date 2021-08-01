@@ -40,29 +40,35 @@ namespace CustomerApi.Data.v1.Database
         {
             var customerEntities = new List<Customer>()
             {
-                Customer.CreateCustomer(
-                    Guid.Parse("9f35b48d-cb87-4783-bfdb-21e36012930a"),
-                    "Amin",
-                    "Ziagham",
-                    "amin.ziagham@gmail.com",
-                    new DateTime(1985, 04, 06)
-                ),
-                Customer.CreateCustomer(
-                    Guid.Parse("654b7573-9501-436a-ad36-94c5696ac28f"),
-                    "Darth",
-                    "Vader",
-                    "darth.vader@domain.com",
-                     new DateTime(1977, 05, 25)
-                ),
-                Customer.CreateCustomer(
-                    Guid.Parse("971316e1-4966-4426-b1ea-a36c9dde1066"),
-                    "Keanu",
-                    "Reeves",
-                    "keanu.reeves@domain.com",
-                    new DateTime(1964, 09, 02)
-                )
+                new Customer
+                {
+                    Id = Guid.Parse("9f35b48d-cb87-4783-bfdb-21e36012930a"),
+                    FirstName = "Amin",
+                    LastName = "Ziagham",
+                    Email = "amin.ziagham@gmail.com",
+                    BirthDate = new DateTime(1985, 04, 06),
+                    Active = true
+                },
+                new Customer
+                {
+                    Id = Guid.Parse("654b7573-9501-436a-ad36-94c5696ac28f"),
+                    FirstName = "Darth",
+                    LastName = "Vader",
+                    Email = "darth.vader@domain.com",
+                    BirthDate = new DateTime(1977, 05, 25),
+                    Active = true
+                },
+                new Customer
+                {
+                    Id = Guid.Parse("971316e1-4966-4426-b1ea-a36c9dde1066"),
+                    FirstName = "Keanu",
+                    LastName = "Reeves",
+                    Email = "keanu.reeves@domain.com",
+                    BirthDate = new DateTime(1964, 09, 02),
+                    Active = true
+                }
             };
-
+            
             if (!dbContext.Customers.Any())
             {
                 dbContext.Customers.AddRange(customerEntities);

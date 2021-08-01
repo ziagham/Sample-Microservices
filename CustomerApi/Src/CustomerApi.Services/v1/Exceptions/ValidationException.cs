@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CustomerApi.Service.v1.Exceptions
+namespace CustomerApi.Services.v1.Exceptions
 {
     public class ValidationException : Exception
     {

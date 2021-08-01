@@ -5,16 +5,8 @@ namespace CustomerApi.Domain.SeekWork
 {
     public abstract class Entity: IAggregateRoot
     {
-        public Guid Id { get; protected set; }
+        public Guid Id { get; set; }
         public DateTime CreatedUtc { get; }
-
-        protected static void CheckRule(IBusinessRule rule)
-        {
-            if (rule.IsBroken())
-            {
-                throw new BusinessRuleValidationException(rule);
-            }
-        }
 
         public override bool Equals(object obj)
         {

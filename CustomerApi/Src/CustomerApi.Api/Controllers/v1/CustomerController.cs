@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
-using CustomerApi.Service.v1.Command.CreateCustomer;
-using CustomerApi.Service.v1.Command.UpdateCustomer;
-using CustomerApi.Service.v1.Query.GetCustomerById;
-using CustomerApi.Service.v1.Query.GetCustomers;
+using CustomerApi.Services.v1.Features.Command.CreateCustomer;
+using CustomerApi.Services.v1.Features.Command.UpdateCustomer;
+using CustomerApi.Services.v1.Features.Query.GetCustomerById;
+using CustomerApi.Services.v1.Features.Query.GetCustomers;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CustomerApi.Api.Controllers
+namespace CustomerApi.Api.Controllers.v1
 {
     [Produces("application/json")]
     [ApiVersion("1.0")]

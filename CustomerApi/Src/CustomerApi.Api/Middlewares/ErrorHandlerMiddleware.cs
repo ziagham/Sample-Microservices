@@ -1,6 +1,6 @@
-using CustomerApi.Service.v1;
-using CustomerApi.Service.v1.Exceptions;
-using CustomerApi.Service.v1.Wrappers;
+using CustomerApi.Services.v1;
+using CustomerApi.Services.v1.Exceptions;
+using CustomerApi.Services.v1.Wrappers;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

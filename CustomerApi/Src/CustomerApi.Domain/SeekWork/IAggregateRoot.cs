@@ -6,7 +6,7 @@ namespace CustomerApi.Domain.SeekWork
 {
     public interface IAggregateRoot
     {
-        Guid Id { get; }
+        Guid Id { get; set;}
         DateTime CreatedUtc { get; }
     }
 }
