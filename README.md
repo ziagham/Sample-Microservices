@@ -20,25 +20,25 @@ Below you will find a complete list of technologies, tools, environments, method
     VS Code 1.58.2
 
 - **Paradigms**  
-    Object-Oriented Programming (OOP)
-    Dependency Injection (DI)
+    Object-Oriented Programming (OOP)  
+    Dependency Injection (DI)  
 
-- **Patterns and Architectures**
-    Repository Pattern
-    MediatR (as Mediator Pattern)
-    Event-Driven Design (EDD) {RabbitMq and Azure ServiceBus}
+- **Patterns and Architectures**  
+    Repository Pattern  
+    MediatR (as Mediator Pattern)  
+    Event-Driven Design (EDD) {RabbitMq and Azure ServiceBus}  
 
-- **Databses**
-    InMemoryDatabase
-    SqlServer 
+- **Databses**  
+    InMemoryDatabase  
+    SqlServer  
 
-- **IDL (Interface description language)**
-    Swagger 
+- **IDL (Interface description language)**  
+    Swagger 5.6.3  
 
-- **Other tools**
-    FluentValidation
+- **Other tools**  
+    FluentValidation  
 
-- **Testing tools**
-    xUnit 2.4.1
-    FakeItEasy 7.1.0
-    FluentAssertions 5.10.3
+- **Testing tools**  
+    xUnit 2.4.1  
+    FakeItEasy 7.1.0  
+    FluentAssertions 5.10.3  
