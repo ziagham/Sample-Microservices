@@ -1,30 +1,44 @@
 # Sample Microservices
 
-    docker build -t customerapi .
-    docker build -t orderapi .
-    docker-compose up
-    docker-compose down
-    docker-compose run --rm
-    docker-compose -f docker-compose-azure.yml up
+This program is a sample microservices that implemented via different patterns and architectures. In principle, this program consists of two RESTful services. These two services are completely independent and have its own database. One service for Customers and one service for Orders. Each service survives separately, but when a customer data is updated, then the order information for that customer will also be updated using the event-driven design. 
 
-    ## Customer
-    ### PUT
-    curl --request PUT --url http://localhost:5000/api/v1.0/customer --header 'content-type: application/json' -d '{ "Id": "9f35b48d-cb87-4783-bfdb-21e36012930a", "FirstName":"Amin2", "LastName":"Ziagham2", "Email":"amin.ziagham@gmail.com", "BirthDate":"2012-04-23T18:25:43.511Z"}'
+## Overview
 
-    ### POST
-    curl --request POST --url http://localhost:5000/api/v1.0/customer --header 'content-type: application/json' -d '{ "FirstName":"Johnny", "LastName":"Depp", "Email":"johnny.depp@gmail.com", "BirthDate":"1963-06-09T18:25:43.511Z"}'
+### Implementation specifications
+This program is implemented in C# programming language and uses .NET 5 technology.
+Below you will find a complete list of technologies, tools, environments, methodologies, and patterns used to implement this program.
 
-    ### GET
-    curl --request GET --url http://localhost:5000/api/v1.0/customer
++ Languages and Frameworks
+    + C# 9.0
+    + .NET 5 (.NET core)
+    + LINQ
 
++ Operating System
+    + Linux Operating System (Ubuntu 18.04 LTS)
 
++ IDE
+    + VS Code 1.58.2
 
-    ## Order
-    ### PUT
-    curl --request PUT --url http://localhost:6000/api/v1.0/order/pay/c34a25d8-e786-4e00-9b70-6acf2e6187ac --header 'content-type: application/json' -d {}
++ Paradigm
+    + Object-Oriented Programming (OOP)
+    + Dependency Injection (DI)
 
-    ### POST
-    curl --request POST --url 'http://localhost:6000/api/v1.0/order' --header 'content-type: application/json' -d '{ "CustomerGuid": "9264f09c-83f8-4bef-a00b-00d673bb274c", "CustomerFullName": "Johnny Depp"}'
++ Patterns and Architectures
+    + Repository Pattern
+    + MediatR (as Mediator Pattern)
+    + Event-Driven Design (EDD) {RabbitMq and Azure ServiceBus}
 
-    ### GET
-    curl --request GET --url http://localhost:6000/api/v1.0/order
++ Databses
+    + InMemoryDatabase
+    + SqlServer 
+
++ IDL
+    + Swagger (Interface description language)
+
++ Other tools
+    + FluentValidation
+
++ Unit Testing
+    + xUnit 2.4.1
+    + FakeItEasy 7.1.0
+    + FluentAssertions 5.10.3
