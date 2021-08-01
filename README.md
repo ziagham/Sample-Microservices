@@ -53,7 +53,7 @@ A few changes must be made before running.
 
 > There is an important property in the appsettings.json file, **BaseServiceSettings**, that must be specified before running. This property have two sub properties `UseInMemoryDatabase` and `UserabbitMq`, which specify the type of database to be used, and whether to use UserabbitMq or AzureServiceBus respectively. 
 
-By default, InMemoryDatabase and AzureServiceBus are used. An AzureServiceBus `ConnectionString` is also set to make running the program with less configurations.
+By default, InMemoryDatabase and AzureServiceBus are used. An AzureServiceBus `ConnectionString` is also set to make running the program with less configurations. Also, if you want to use RabbitMq, just set the UserabbitMq property to true. Additionally, if you need to use `SQL-Server`, you need to configure ConnectionStrings to your database.
 
 Below you can see the program settings, which is in Json format.
 
@@ -77,9 +77,8 @@ Below you can see the program settings, which is in Json format.
         }
 	}
     
-To run this program, first go to the main solution directory and then run the below commands in the **Terminal**, **Powershell** or **CMD**.
+This program can also be run as a `docker`. There are two `docker-compose` files in the main root of this repository. If the service images have not been created before, you can use the `docker-compose.build.yml` file. By run this file, service images are created and then executed. On the other hand, if the service images have already been created, the `docker-compose.ymld file can be used to run.
 
-    dotnet restore
-    dotnet build
-    cd Src/MainApplication
-    dotnet run
+To run this program, first go to the main root of this repository and then run the below commands in the **Terminal**, **Powershell** or **CMD**.
+
+    docker-compose -f docker-compose.build.yml up
