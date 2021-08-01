@@ -116,4 +116,4 @@ On the other hand, Order service also have some REST methods.
 
 
 ### Future works
-For future works, to better manage and integrate requests, Api-Gateway (e.g, Ocelot, Azure Api Management) can be used. 
+Api-Gateway (e.g, Ocelot, Azure Api-Management) can also be used for better manage and integrate requests.
