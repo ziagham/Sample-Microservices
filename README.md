@@ -115,5 +115,5 @@ On the other hand, Order service also have some REST methods.
     curl --request PUT --url http://localhost:6000/api/v1.0/order/pay/c34a25d8-e786-4e00-9b70-6acf2e6187ac --header 'content-type: application/json' -d {}
 
 
-### Future works
-Api-Gateway (e.g, Ocelot, Azure Api-Management) can also be used for better manage and integrate requests.
+## Future works
+ApiGateway (e.g, Ocelot, Azure Api-Management) can also be used for better manage and integrate requests.
