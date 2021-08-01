@@ -82,3 +82,18 @@ This program can also be run as a `docker`. There are two `docker-compose` files
 To run this program, first go to the main root of this repository and then run the below commands in the **Terminal**, **Powershell** or **CMD**.
 
     docker-compose -f docker-compose.build.yml up
+
+It is assumed that the docker is installed on your computer.
+
+### Perform some operations
+
+Customer service includes some RESTful methods. These methods include Customer list, new customer registration and customer update. The following commands can be used to call each method.
+
+#### GET customers list
+    curl --request GET --url http://localhost:5000/api/v1.0/customer
+
+#### Register new customer
+    curl --request POST --url http://localhost:5000/api/v1.0/customer --header 'content-type: application/json' -d '{ "FirstName":"Johnny", "LastName":"Depp", "Email":"johnny.depp@gmail.com", "BirthDate":"1963-06-09T18:25:43.511Z"}'
+
+#### Update customer data
+    curl --request PUT --url http://localhost:5000/api/v1.0/customer --header 'content-type: application/json' -d '{ "Id": "9f35b48d-cb87-4783-bfdb-21e36012930a", "FirstName":"Amin2", "LastName":"Ziagham2", "Email":"amin.ziagham@gmail.com", "BirthDate":"2012-04-23T18:25:43.511Z"}'
