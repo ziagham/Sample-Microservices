@@ -1,6 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
-using OrderApi.Data.v1.Repository;
+using OrderApi.Data.Repository.v1;
 using MediatR;
 
 namespace OrderApi.Services.v1.Features.Command.UpdateOrder

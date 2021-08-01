@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using CustomerApi.Data.v1.Database;
+using CustomerApi.Data.Database.v1;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using Microsoft.EntityFrameworkCore;
 
-namespace CustomerApi.Data.v1.Repository
+namespace CustomerApi.Data.Repository.v1
 {
     public class CustomerRepository : Repository<Customer>, ICustomerRepository
     {

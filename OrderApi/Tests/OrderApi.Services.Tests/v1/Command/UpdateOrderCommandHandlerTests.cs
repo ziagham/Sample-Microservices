@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using FakeItEasy;
-using OrderApi.Data.v1.Repository;
+using OrderApi.Data.Repository.v1;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 using OrderApi.Services.v1.Features.Command.UpdateOrder;
 using Xunit;

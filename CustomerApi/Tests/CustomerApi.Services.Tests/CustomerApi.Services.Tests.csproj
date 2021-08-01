@@ -22,9 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Src\CustomerApi.Domain\CustomerApi.Domain.csproj" />
     <ProjectReference Include="..\..\Src\CustomerApi.Services\CustomerApi.Services.csproj" />
-    <ProjectReference Include="..\..\Src\CustomerApi.EventBus\CustomerApi.EventBus.csproj" />
   </ItemGroup>
 
 </Project>

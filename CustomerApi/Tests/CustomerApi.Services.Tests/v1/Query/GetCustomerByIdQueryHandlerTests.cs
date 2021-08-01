@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
-using CustomerApi.Data.v1.Repository;
+using CustomerApi.Data.Repository.v1;
 using CustomerApi.Services.v1.Features.Query.GetCustomerById;
 using FakeItEasy;
 using FluentAssertions;

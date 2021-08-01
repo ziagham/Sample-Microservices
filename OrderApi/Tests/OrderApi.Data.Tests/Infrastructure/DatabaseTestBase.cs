@@ -1,6 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using OrderApi.Data.v1.Database;
+using OrderApi.Data.Database.v1;
 
 namespace OrderApi.Data.Tests.Infrastructure
 {

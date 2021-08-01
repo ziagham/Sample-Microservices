@@ -2,9 +2,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using OrderApi.Data.v1.Database;
+using CustomerApi.Data.Database.v1;
 
-namespace OrderApi.Data.v1
+namespace CustomerApi.Data.v1
 {
     public static class ServiceExtensions
     {
@@ -14,18 +14,18 @@ namespace OrderApi.Data.v1
 
             if (!useInMemory)
             {
-                services.AddDbContext<OrderContext>(options =>
+                services.AddDbContext<CustomerContext>(options =>
                 {
-                    options.UseSqlServer(configuration.GetConnectionString("OrderDatabase"));
+                    options.UseSqlServer(configuration.GetConnectionString("CustomerDatabase"));
                 }, ServiceLifetime.Singleton);
                 
                 services.Migrate();
             }
             else
             {
-                services.AddDbContext<OrderContext>(options => 
+                services.AddDbContext<CustomerContext>(options => 
                 {
-                    options.UseInMemoryDatabase("OrderDb");
+                    options.UseInMemoryDatabase("CustomerDb");
                     options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 }, ServiceLifetime.Singleton);
             }

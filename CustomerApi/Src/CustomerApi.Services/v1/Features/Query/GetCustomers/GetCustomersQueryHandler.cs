@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using CustomerApi.Data.v1.Repository;
+using CustomerApi.Data.Repository.v1;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using MediatR;
 

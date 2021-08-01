@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 
-namespace CustomerApi.Data.v1.Database
+namespace CustomerApi.Data.Database.v1
 {
     public static class DataInitializer
     {

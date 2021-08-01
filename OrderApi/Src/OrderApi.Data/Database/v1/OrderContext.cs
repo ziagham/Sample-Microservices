@@ -2,7 +2,7 @@ using System;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 
-namespace OrderApi.Data.v1.Database
+namespace OrderApi.Data.Database.v1
 {
     public class OrderContext : DbContext
     {

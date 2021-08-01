@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using CustomerApi.Data.v1.Repository;
+using CustomerApi.Data.Repository.v1;
 using MediatR;
 using System.Reflection;
 using CustomerApi.Services.v1.Behaviors;

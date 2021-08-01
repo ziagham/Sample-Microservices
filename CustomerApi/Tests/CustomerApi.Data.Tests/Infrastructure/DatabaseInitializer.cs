@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using CustomerApi.Data.v1.Database;
+using CustomerApi.Data.Database.v1;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 
 namespace CustomerApi.Data.Tests.Infrastructure

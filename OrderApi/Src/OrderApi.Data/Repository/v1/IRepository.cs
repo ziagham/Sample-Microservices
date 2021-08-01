@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using OrderApi.Domain.SeekWork;
 
-namespace OrderApi.Data.v1.Repository
+namespace OrderApi.Data.Repository.v1
 {
     public interface IRepository<TEntity> where TEntity : Entity
     {

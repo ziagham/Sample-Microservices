@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
-using CustomerApi.Data.v1.Database;
-using CustomerApi.Data.v1.Repository;
+using CustomerApi.Data.Database.v1;
+using CustomerApi.Data.Repository.v1;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using CustomerApi.Data.Tests.Infrastructure;
 using FakeItEasy;

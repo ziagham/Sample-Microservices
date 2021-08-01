@@ -4,7 +4,7 @@ using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace CustomerApi.Data.v1.Database
+namespace CustomerApi.Data.Database.v1
 {
     public class CustomerContext : DbContext
     {

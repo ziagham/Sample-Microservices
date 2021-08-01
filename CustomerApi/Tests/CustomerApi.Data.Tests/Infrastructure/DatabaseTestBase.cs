@@ -1,5 +1,5 @@
 using System;
-using CustomerApi.Data.v1.Database;
+using CustomerApi.Data.Database.v1;
 using Microsoft.EntityFrameworkCore;
 
 namespace CustomerApi.Data.Tests.Infrastructure

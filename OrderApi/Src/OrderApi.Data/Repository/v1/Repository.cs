@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using OrderApi.Data.v1.Database;
+using OrderApi.Data.Database.v1;
 using OrderApi.Domain.SeekWork;
 
-namespace OrderApi.Data.v1.Repository
+namespace OrderApi.Data.Repository.v1
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {

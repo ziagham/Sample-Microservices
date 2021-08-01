@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CustomerApi.Domain.AggregatesModel.CustomerAggregate;
-using CustomerApi.Data.v1.Repository;
+using CustomerApi.Data.Repository.v1;
 using CustomerApi.Services.v1.Features.Query.GetCustomers;
 using FakeItEasy;
 using FluentAssertions;

@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CustomerApi.Data.v1.Database;
+using CustomerApi.Data.Database.v1;
 using CustomerApi.Domain.SeekWork;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace CustomerApi.Data.v1.Repository
+namespace CustomerApi.Data.Repository.v1
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {

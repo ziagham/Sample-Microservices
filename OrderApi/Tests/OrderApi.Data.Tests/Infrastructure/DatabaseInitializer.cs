@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
-using OrderApi.Data.v1.Database;
+using System.Collections.Generic;
+using OrderApi.Data.Database.v1;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
 namespace OrderApi.Data.Tests.Infrastructure
@@ -19,7 +20,7 @@ namespace OrderApi.Data.Tests.Infrastructure
 
         private static void Seed(OrderContext context)
         {
-            var orders = new[]
+            var orders = List<Order>()
             {
                 new Order
                 {

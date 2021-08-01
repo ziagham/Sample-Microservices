@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Data.v1.Repository
+namespace OrderApi.Data.Repository.v1
 {
     public interface IOrderRepository: IRepository<Order>
     {
