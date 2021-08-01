@@ -4,7 +4,7 @@ This program is a sample microservices that implemented via different patterns a
 
 ## Overview
 
-Both services can use SQL-Serverql or InMemoryDatabase, and this is determined by the settings in each service. Also in the settings, there are properties related to the event-bus that must be specified. It should be noted that event-bus properties must be configured for both service as same.
+Both services can use `SQL-Server` or `InMemoryDatabase`, and this is determined by the settings in each service. Also in the settings, there are properties related to the event-bus that must be specified. It should be noted that event-bus properties must be configured for both service as same.
 
 ### Implementation specifications
 This program is implemented in C# programming language and uses .NET 5 technology.
@@ -27,7 +27,7 @@ Below you will find a complete list of technologies, tools, environments, method
 
 - **Patterns and Architectures**  
     Repository Pattern  
-    MediatR (as Mediator Pattern)  
+    MediatR (as Mediator Pattern) 9.0.0  
     Event-Driven Design (EDD) {RabbitMq and Azure ServiceBus}  
 
 - **Databses**  
@@ -38,7 +38,7 @@ Below you will find a complete list of technologies, tools, environments, method
     Swagger 5.6.3  
 
 - **Other tools**  
-    FluentValidation  
+    FluentValidation 10.3.0  
     Docker  
 
 - **Testing tools**  
@@ -51,20 +51,30 @@ Below you will find a complete list of technologies, tools, environments, method
 
 A few changes must be made before running. 
 
-> Since this program is developed in the Linux environment, it is necessary to change the paths for the InputDirectory and OutputDirectory, as well as the path of the `ReferenceData` file in the **appsettings.json** file in **MainAppliction** project. 
+> There is an important property in the appsettings.json file, **BaseServiceSettings**, that must be specified before running. This property have two sub properties `UseInMemoryDatabase` and `UserabbitMq`, which specify the type of database to be used, and whether to use UserabbitMq or AzureServiceBus respectively. 
 
-Below you can see the program settings, which is in Json format. This file has more settings items. Such as **WatchingFilters** that can be used for watching on certain file extensions. **OutputResultSuffix** which adds the desired extension to the end of the output files. **OverwriteFile** used in a situation if the the output file name is exist in output directory, then it should be overwriten or a generate  a unique file name. **CheckDirectoryExistand** whether the existence of input and output directories are checked.
+By default, InMemoryDatabase and AzureServiceBus are used. An AzureServiceBus `ConnectionString` is also set to make running the program with less configurations.
+
+Below you can see the program settings, which is in Json format.
 
     {
-      "AppSettings": {
-          "InputDirectory": "/home/ziagham/...",
-          "OutputDirectory": "/home/ziagham/...",
-          "ReferenceDataPath": "/home/ziagham/.../ReferenceData.xml",
-          "WatchingFilters": "*.*",
-          "OutputResultSuffix": "-Result",
-          "OverwriteFile": false,
-          "CheckDirectoryExist": true
-      }
+        "RabbitMq": {
+            "Hostname": "rabbitmq",
+            "QueueName": "CustomerQueue",
+            "UserName": "guest",
+            "Password": "guest"
+        },
+        "ConnectionStrings": {
+            "CustomerDatabase": ""
+        },
+        "BaseServiceSettings": {
+            "UseInMemoryDatabase": true,
+            "UserabbitMq": false
+        },
+        "AzureServiceBus": {
+            "ConnectionString": "",
+            "QueueName": "CustomerQueue"
+        }
 	}
     
 To run this program, first go to the main solution directory and then run the below commands in the **Terminal**, **Powershell** or **CMD**.
