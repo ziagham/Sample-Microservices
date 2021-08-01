@@ -88,7 +88,7 @@ It is assumed that the docker is installed on your computer.
 
 ### Perform some operations
 
-Customer service includes some RESTful methods. These methods include Customer list, new customer registration and customer update. The following commands can be used to call each method.
+Customer service includes some REST methods. These methods include Customer list, new customer registration and customer update. The following commands can be used to call each method.
 
 ##### GET customers list
     curl --request GET --url http://localhost:5000/api/v1.0/customer
@@ -98,3 +98,16 @@ Customer service includes some RESTful methods. These methods include Customer l
 
 ##### Update customer data
     curl --request PUT --url http://localhost:5000/api/v1.0/customer --header 'content-type: application/json' -d '{ "Id": "9f35b48d-cb87-4783-bfdb-21e36012930a", "FirstName":"Amin2", "LastName":"Ziagham2", "Email":"amin.ziagham@gmail.com", "BirthDate":"2012-04-23T18:25:43.511Z"}'
+
+
+On the other hand, Order service also have some REST methods. 
+
+### GET orders list (just payed orders not all)
+    curl --request GET --url http://localhost:6000/api/v1.0/order
+
+### Register new order (Remember to register customer before order registration)
+    curl --request POST --url 'http://localhost:6000/api/v1.0/order' --header 'content-type: application/json' -d '{ "CustomerGuid": "9264f09c-83f8-4bef-a00b-00d673bb274c", "CustomerFullName": "Johnny Depp"}'
+
+### Pay order
+    curl --request PUT --url http://localhost:6000/api/v1.0/order/pay/c34a25d8-e786-4e00-9b70-6acf2e6187ac --header 'content-type: application/json' -d {}
+
