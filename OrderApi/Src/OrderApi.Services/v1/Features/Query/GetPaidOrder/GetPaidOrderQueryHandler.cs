@@ -5,7 +5,7 @@ using MediatR;
 using OrderApi.Data.v1.Repository;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Query.GetPaidOrder
+namespace OrderApi.Services.v1.Features.Query.GetPaidOrder
 {
     public class GetPaidOrderQueryHandler : IRequestHandler<GetPaidOrderQuery, List<Order>>
     {

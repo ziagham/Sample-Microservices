@@ -14,7 +14,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Xunit;
 
-namespace CustomerApi.Test.Controllers.v1
+namespace CustomerApi.Api.Tests.Controllers.v1
 {
     public class CustomerControllerTests
     {

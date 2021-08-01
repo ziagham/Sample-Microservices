@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace OrderApi.Service.v1.Exceptions
+namespace OrderApi.Services.v1.Exceptions
 {
     public class ApiException : Exception
     {

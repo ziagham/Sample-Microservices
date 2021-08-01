@@ -2,9 +2,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using OrderApi.Data.v1.Repository;
 using MediatR;
-using OrderApi.Service.v1.Command.UpdateOrder;
 
-namespace OrderApi.Service.v1.Command.UpdateCustomer
+namespace OrderApi.Services.v1.Features.Command.UpdateOrder
 {
     public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
     {

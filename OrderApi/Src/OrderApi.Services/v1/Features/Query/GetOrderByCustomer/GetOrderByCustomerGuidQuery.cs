@@ -3,7 +3,7 @@ using MediatR;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 using System;
 
-namespace OrderApi.Service.v1.Query.GetOrderByCustomer
+namespace OrderApi.Services.v1.Features.Query.GetOrderByCustomer
 {
     public class GetOrderByCustomerGuidQuery : IRequest<List<Order>>
     {

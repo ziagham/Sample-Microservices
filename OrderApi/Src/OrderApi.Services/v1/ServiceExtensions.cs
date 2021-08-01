@@ -2,10 +2,10 @@ using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using System.Reflection;
 using OrderApi.Data.v1.Repository;
-using OrderApi.Service.v1.Behaviors;
+using OrderApi.Services.v1.Behaviors;
 using OrderApi.Services.v1.Services;
 
-namespace OrderApi.Service.v1
+namespace OrderApi.Services.v1
 {
     public static class ServiceExtensions
     {

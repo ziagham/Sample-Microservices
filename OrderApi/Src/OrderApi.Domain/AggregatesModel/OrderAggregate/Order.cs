@@ -13,28 +13,28 @@ namespace OrderApi.Domain.AggregatesModel.OrderAggregate
 
         #region constructors
         // Empty constructor for EF
-        private Order() { }
+        public Order() { }
 
-        private Order(Guid id, int orderState, Guid customerGuid, string customerFullName)
-        {
-            Id = id;
-            OrderState = orderState;
-            CustomerGuid = customerGuid;
-            CustomerFullName = customerFullName;
-        }
+        // public Order(Guid id, int orderState, Guid customerGuid, string customerFullName)
+        // {
+        //     Id = id;
+        //     OrderState = orderState;
+        //     CustomerGuid = customerGuid;
+        //     CustomerFullName = customerFullName;
+        // }
         #endregion
 
-        #region methods
+        // #region methods
 
-        public static Order CreateOrder(int orderState, Guid customerGuid, string customerFullName)
-        {
-            return new Order(Guid.NewGuid(), orderState, customerGuid, customerFullName);
-        }
+        // public static Order CreateOrder(int orderState, Guid customerGuid, string customerFullName)
+        // {
+        //     return new Order(Guid.NewGuid(), orderState, customerGuid, customerFullName);
+        // }
 
-        public static Order UpdateOrder(Guid id, int orderState, Guid customerGuid, string customerFullName)
-        {
-            return new Order(id, orderState, customerGuid, customerFullName);
-        }
-        #endregion
+        // public static Order UpdateOrder(Guid id, int orderState, Guid customerGuid, string customerFullName)
+        // {
+        //     return new Order(id, orderState, customerGuid, customerFullName);
+        // }
+        // #endregion
     }
 }

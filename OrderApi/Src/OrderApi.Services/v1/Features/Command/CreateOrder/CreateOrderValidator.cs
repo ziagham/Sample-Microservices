@@ -1,7 +1,7 @@
 using System;
 using FluentValidation;
 
-namespace OrderApi.Service.v1.Command.CreateOrder
+namespace OrderApi.Services.v1.Features.Command.CreateOrder
 {
     public class CreateOrderValidator : AbstractValidator<CreateOrderCommand>
     {

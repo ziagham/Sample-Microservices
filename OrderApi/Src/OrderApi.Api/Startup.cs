@@ -1,5 +1,5 @@
 using OrderApi.Api.Extensions;
-using OrderApi.Service.v1;
+using OrderApi.Services.v1;
 using OrderApi.Data.v1;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FluentValidation.AspNetCore;
-using OrderApi.Service.v1.Exceptions;
+using OrderApi.Services.v1.Exceptions;
 
 namespace OrderApi.Api
 {

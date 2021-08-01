@@ -4,7 +4,7 @@ using OrderApi.Data.v1.Repository;
 using MediatR;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Command.CreateOrder
+namespace OrderApi.Services.v1.Features.Command.CreateOrder
 {
     public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Order>
     {
@@ -17,7 +17,12 @@ namespace OrderApi.Service.v1.Command.CreateOrder
 
         public async Task<Order> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
         {
-            var createOrder = Order.CreateOrder(1, request.CustomerGuid, request.CustomerFullName);
+            var createOrder = new Order {
+                OrderState = 1,
+                CustomerGuid = request.CustomerGuid,
+                CustomerFullName = request.CustomerFullName
+            };
+            
             var customer = await _orderRepository.AddAsync(createOrder);
 
             return customer;

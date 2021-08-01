@@ -1,6 +1,6 @@
-using OrderApi.Service.v1;
-using OrderApi.Service.v1.Exceptions;
-using OrderApi.Service.v1.Wrappers;
+using OrderApi.Services.v1;
+using OrderApi.Services.v1.Exceptions;
+using OrderApi.Services.v1.Wrappers;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;

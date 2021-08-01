@@ -4,7 +4,7 @@ using MediatR;
 using OrderApi.Data.v1.Repository;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Command.PayOrder
+namespace OrderApi.Services.v1.Features.Command.PayOrder
 {
     public class PayOrderCommandHandler : IRequestHandler<PayOrderCommand, Order>
     {
@@ -17,7 +17,13 @@ namespace OrderApi.Service.v1.Command.PayOrder
 
         public async Task<Order> Handle(PayOrderCommand request, CancellationToken cancellationToken)
         {
-            var updatedOrder = Order.UpdateOrder(request.Id, request.OrderState, request.CustomerGuid, request.CustomerFullName);
+            var updatedOrder = new Order {
+                Id = request.Id,
+                OrderState = request.OrderState,
+                CustomerGuid = request.CustomerGuid,
+                CustomerFullName = request.CustomerFullName
+            };
+
             var order = await _orderRepository.UpdateAsync(updatedOrder);
 
             return order;

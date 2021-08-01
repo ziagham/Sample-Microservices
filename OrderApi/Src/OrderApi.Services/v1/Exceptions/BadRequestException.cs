@@ -1,6 +1,6 @@
 using System;
 
-namespace OrderApi.Service.v1.Exceptions
+namespace OrderApi.Services.v1.Exceptions
 {
     public class BadRequestException : Exception
     {

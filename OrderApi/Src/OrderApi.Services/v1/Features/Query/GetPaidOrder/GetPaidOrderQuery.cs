@@ -3,7 +3,7 @@ using MediatR;
 using OrderApi.Domain;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Query.GetPaidOrder
+namespace OrderApi.Services.v1.Features.Query.GetPaidOrder
 {
     public class GetPaidOrderQuery : IRequest<List<Order>>
     {

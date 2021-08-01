@@ -2,7 +2,7 @@ using System;
 using MediatR;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Command.PayOrder
+namespace OrderApi.Services.v1.Features.Command.PayOrder
 {
    public class PayOrderCommand : IRequest<Order>
     {

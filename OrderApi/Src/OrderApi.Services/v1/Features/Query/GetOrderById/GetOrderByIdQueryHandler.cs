@@ -2,10 +2,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using OrderApi.Data.v1.Repository;
 using MediatR;
-using OrderApi.Service.v1.Query.GetOrderById;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Query.GetCustomerById
+namespace OrderApi.Services.v1.Features.Query.GetOrderById
 {
     public class GetOrderByIdQueryHandler : IRequestHandler<GetOrderByIdQuery, Order>
     {

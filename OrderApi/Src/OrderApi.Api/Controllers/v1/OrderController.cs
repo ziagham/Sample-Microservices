@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using OrderApi.Service.v1.Command.CreateOrder;
-using OrderApi.Service.v1.Command.PayOrder;
-using OrderApi.Service.v1.Query.GetOrderById;
-using OrderApi.Service.v1.Query.GetPaidOrder;
+using OrderApi.Services.v1.Features.Command.CreateOrder;
+using OrderApi.Services.v1.Features.Command.PayOrder;
+using OrderApi.Services.v1.Features.Query.GetOrderById;
+using OrderApi.Services.v1.Features.Query.GetPaidOrder;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Api.Controllers
+namespace OrderApi.Api.Controllers.v1
 {
     [Produces("application/json")]
     [ApiVersion("1.0")]

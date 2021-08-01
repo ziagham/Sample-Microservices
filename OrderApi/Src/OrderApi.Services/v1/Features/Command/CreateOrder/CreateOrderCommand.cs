@@ -2,7 +2,7 @@ using System;
 using MediatR;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Command.CreateOrder
+namespace OrderApi.Services.v1.Features.Command.CreateOrder
 {
     public class CreateOrderCommand : IRequest<Order>
     {

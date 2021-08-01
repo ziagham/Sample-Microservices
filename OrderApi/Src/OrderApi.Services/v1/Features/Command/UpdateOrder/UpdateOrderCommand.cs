@@ -2,7 +2,7 @@ using MediatR;
 using System.Collections.Generic;
 using OrderApi.Domain.AggregatesModel.OrderAggregate;
 
-namespace OrderApi.Service.v1.Command.UpdateOrder
+namespace OrderApi.Services.v1.Features.Command.UpdateOrder
 {
     public class UpdateOrderCommand : IRequest
     {
